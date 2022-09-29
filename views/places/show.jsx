@@ -52,10 +52,12 @@ function show (data) {
             </div>
             <hr />
             <h2>Comments</h2>
-            {comments}
+            <div className="row">
+              {comments}
+            </div>
             <hr />
             <h2> Got Something to say?</h2>
-            <form method="POST" action="/places">
+                <form action={`/places/${data.place.id}/comment`} method="POST">
                     <div className="form-group">
                         <label htmlFor="content">Content</label>
                         <input className="form-control" id="content" name="content" required />
@@ -65,12 +67,12 @@ function show (data) {
                         <input className="form-control" id="author" name="author" />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="rating">Rating</label>
-                        <input className="form-control" id="rating" name="rating" />
+                        <label htmlFor="stars">Star Rating</label>
+                        <input className="form-control" type="range" step="0.5" min="1" max="5" id="stars" name="stars" />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="rant?">Rant?</label>
-                        <input className="form-control" type= "checkbox" id="state" name="state" />
+                        <label htmlFor="rant">Rant?</label>
+                        <input className="form-control" type= "checkbox" id="rant" name="rant" />
                     </div>
                     <input className="btn btn-primary" type="submit" value="Add Comment" />
                 </form>

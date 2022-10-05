@@ -2,7 +2,7 @@ const router = require('express').Router()
 const db = require('../models')
 // const places = require('../models/places.js')
 
-// More code in a moment 
+//  More code in a moment 
 router.get('/', (req, res) => {
     db.Place.find()
     .then((places) => {
